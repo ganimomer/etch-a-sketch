@@ -1,0 +1,46 @@
+$knob-diameter: 150px;
+$board: board;
+$knob-horizonal: knob-horizontal;
+$knob-vertical: knob-vertical;
+$panel: panel;
+
+.EtchASketch {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+    
+    &__device {
+        display: grid;
+        flex-grow: 1;
+        grid-template: ". . ." ($knob-diameter/2)
+            ". #{$board} ." auto
+            "#{$knob-horizonal} #{$panel} #{$knob-vertical}" #{$knob-diameter} /
+            $knob-diameter auto $knob-diameter;
+        background: linear-gradient(rgb(220, 0, 10), rgb(190, 0, 0));
+        border-radius: 15px;
+        border: 5px outset rgba(0, 0, 0, 0.1);
+    }
+
+    &__board {
+        grid-area: $board;
+        justify-self: stretch;
+        align-self: stretch;
+    }
+
+    &__knob-horizontal {
+        grid-area: $knob-horizonal
+    }
+
+    &__panel {
+        grid-area: panel;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__knob-vertical {
+        grid-area: $knob-vertical
+    }
+}

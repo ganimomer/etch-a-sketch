@@ -1,0 +1,22 @@
+.Knob {
+    position: relative;
+
+    &__outer {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: repeating-conic-gradient(white 5deg, #ccc 10deg);
+        border: 1px solid #bbb;
+        border-radius: 50%;
+    }
+
+    &__inner {
+        position: absolute;
+        border-radius: 50%;
+        width: 90%;
+        height: 90%;
+        left: 5%;
+        top: 5%;
+        background: linear-gradient(#fff, #aaa)
+    }
+}
